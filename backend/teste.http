@@ -41,3 +41,49 @@ Content-Type: application/json
     "email": "rodrigo@gmail.com",
     "senha": "456"
 }
+
+
+################################
+
+### - Teste para Cadastrar o Produto
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nome": "Nike",
+    "categoria": "Air",
+    "numero": 38,
+    "quantidade": 20,
+    "precoUnit": 699.99
+}
+
+### - Teste para Listar o Produto
+
+GET http://localhost:3000/produtos
+Content-Type: application/json
+
+### - Teste para Consultar o Produto
+GET http://localhost:3000/produto/2
+Content-Type: application/json
+
+
+### - Teste para Consultar o Produto por nome
+GET http://localhost:3000/produto/buscar/Nike
+Content-Type: application/json
+
+### - Teste para Excluir o Produto
+DELETE http://localhost:3000/produto/4
+Content-Type: application/json
+
+### - Teste para Atualizar o Produto
+PUT http://localhost:3000/produto/3
+Content-Type: application/json
+
+{
+    "nome": "Adidas",
+    "categoria": "superStar",
+    "numero": 42,
+    "quantidade": 10,
+    "precoUnit": 550.00
+}
+

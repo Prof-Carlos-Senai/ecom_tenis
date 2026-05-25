@@ -3,8 +3,8 @@ const Produto = require('../models/Produto')
 const cadastrar = async (req, res)=>{
     const valores = req.body
 
-    if(!valores.nome || !valores.categoria || valores.numero || 
-        valores.quantidade || valores.precoUnit){
+    if(!valores.nome || !valores.categoria || !valores.numero || 
+        !valores.quantidade || !valores.precoUnit){
 
         return res.status(400).json({message: 'Todos os campos são obrigatórios!'})
     }
@@ -65,7 +65,7 @@ const excluir = async (req,res)=>{
         if(!dados){
             res.status(404).json({message: 'Produto não encontrado no banco de dados!'})
         }else{
-            await Produto.destroy({where: { codUsuario: id}})
+            await Produto.destroy({where: { CodProduto: id}})
             res.status(200).json({message: 'Produto excluído com sucesso!'})
         }
     }catch(err){
@@ -82,7 +82,7 @@ const atualizar = async (req,res)=>{
         if(!dados){
             res.status(404).json({message: 'Produto não encontrado no banco de dados!'})
         }else{
-            await Produto.update(valores, { where: { codUsuario: id}})
+            await Produto.update(valores, { where: { CodProduto: id}})
             dados = await Produto.findByPk(id)
             res.status(200).json(dados)
         }
