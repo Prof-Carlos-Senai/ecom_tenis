@@ -5,6 +5,7 @@ const cors = require('cors')
 const conn = require('./db/conn')
 const produtoController = require('./controller/produto.controller')
 const usuarioController = require('./controller/usuario.controller')
+const movimentoController = require('./controller/movimento.controller')
 const hostname =  'localhost' // 127.0.0.1
 const PORT = 3000
 // ------------ Middleware ----------
@@ -26,6 +27,9 @@ app.get('/produto/:id', produtoController.buscarPorCod)
 app.get('/produto/buscar/:nome', produtoController.buscarPorNome)
 app.delete('/produto/:id',produtoController.excluir)
 app.put('/produto/:id',produtoController.atualizar)
+
+app.post('/movimento', movimentoController.cadastrar)
+app.get('/movimentos', movimentoController.listar)
 
 app.get('/',(req,res)=>{
     res.status(200).json({message: 'Aplicação rodando!!!'})

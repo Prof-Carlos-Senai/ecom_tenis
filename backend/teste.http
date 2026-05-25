@@ -87,3 +87,22 @@ Content-Type: application/json
     "precoUnit": 550.00
 }
 
+
+#####################################
+### - Teste para Cadastrar Movimento
+
+POST http://localhost:3000/movimento
+Content-Type: application/json
+
+{
+    "idUsuario": 1,
+    "idProduto": 1,
+    "tipo": "SAIDA",
+    "qtdeMov": 30,
+    "data": "2026-05-25"
+}
+
+### - Teste para Listar o Movimento
+
+GET http://localhost:3000/movimentos
+Content-Type: application/json
