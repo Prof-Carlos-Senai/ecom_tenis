@@ -2,8 +2,9 @@ const Usuario = require('../models/Usuario')
 
 const cadastrar = async (req, res)=>{
     const valores = req.body
+    console.log(valores)
 
-    if(!valores.nome || !valores.email || valores.senha){
+    if(!valores.nome || !valores.email || !valores.senha){
         return res.status(400).json({message: 'Todos os campos são obrigatórios!'})
     }
 
