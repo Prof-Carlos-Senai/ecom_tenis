@@ -16,7 +16,6 @@ const cadastrar = async (req, res)=>{
         res.status(500).json({message: 'Não foi possível cadastrar o Usuário'})
     }
 }
-
 const listar = async (req,res)=>{
     try{
         const dados = await Usuario.findAll()
@@ -26,7 +25,6 @@ const listar = async (req,res)=>{
         res.status(500).json({message: 'Não foi possível listar os Usuários'})
     }
 }
-
 const buscarPorCod = async (req,res)=>{
     const id = req.params.id
     try{
@@ -41,7 +39,6 @@ const buscarPorCod = async (req,res)=>{
         res.status(500).json({message: 'Não foi possível encontrar o Usuário'})
     }
 }
-
 const buscarPorNome = async (req,res)=>{
     const nome = req.params.nome
     try{
@@ -56,7 +53,6 @@ const buscarPorNome = async (req,res)=>{
         res.status(500).json({message: 'Não foi possível encontrar o nome do Usuário'})
     }
 }
-
 const excluir = async (req,res)=>{
     const id = req.params.id
     try{
@@ -72,7 +68,6 @@ const excluir = async (req,res)=>{
         res.status(500).json({message: 'Não foi possível excluir o Usuário'})
     }
 }
-
 const atualizar = async (req,res)=>{
     const id = req.params.id
     const valores = req.body
