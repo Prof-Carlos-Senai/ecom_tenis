@@ -65,7 +65,7 @@ const excluir = async (req,res)=>{
         if(!dados){
             res.status(404).json({message: 'Produto não encontrado no banco de dados!'})
         }else{
-            await Produto.destroy({where: { CodProduto: id}})
+            await Produto.destroy({where: { codProduto: id}})
             res.status(200).json({message: 'Produto excluído com sucesso!'})
         }
     }catch(err){
@@ -82,7 +82,7 @@ const atualizar = async (req,res)=>{
         if(!dados){
             res.status(404).json({message: 'Produto não encontrado no banco de dados!'})
         }else{
-            await Produto.update(valores, { where: { CodProduto: id}})
+            await Produto.update(valores, { where: { codProduto: id}})
             dados = await Produto.findByPk(id)
             res.status(200).json(dados)
         }

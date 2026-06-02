@@ -4,7 +4,7 @@ const db = require('../db/conn')
 const VwHistoricoSaidas = db.define('VwHistoricoSaidas',{
     codMovimento: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
+        primaryKey: true, // sequelize precisa da chave primária para o mapeamento
     },
     nome_produto: {
         type: DataTypes.STRING(40),

@@ -4,7 +4,7 @@ const db = require('../db/conn')
 const VwTotalCategoria = db.define('VwTotalCategoria',{
     categoria: {
         type: DataTypes.STRING(40),
-        primaryKey: false // sequelize precisa da primary key
+        primaryKey: true // sequelize precisa da chave primária para o mapeamento
     },
     total_pares: {
         type: DataTypes.INTEGER,
@@ -14,7 +14,7 @@ const VwTotalCategoria = db.define('VwTotalCategoria',{
     },
 },{
     timestamps: false,
-    tableName: 'vw_total_por_categorias'
+    tableName: 'vw_total_por_categoria'
 })
 
 module.exports = VwTotalCategoria

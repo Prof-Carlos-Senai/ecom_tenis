@@ -37,7 +37,7 @@ async function syncDataBase(){
     }catch(err){
         console.error('Erro ao sincronizar as tabelas',err)
     }finally{
-       conn.close()
+       await conn.close()
        console.log('Fechando a conexão com o banco de dados') 
     }
 }
