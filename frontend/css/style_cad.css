@@ -19,7 +19,7 @@ button{
     cursor: pointer;
 }
 
-.resposta{
+.resposta, .resposta_nome{
     font-size: 1.25rem;
     color: white;
     font-weight: bold;
